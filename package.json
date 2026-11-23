@@ -1,0 +1,27 @@
+{
+  "name": "fullstack-rag-eval-studio",
+  "version": "1.0.0",
+  "description": "Zero-dependency TypeScript / Node.js 22 ESM AI SDK & Streaming Evaluation Gateway featuring strict JSON-Schema tool validation, PII redaction, cosine n-gram LRU caching, sliding-window token circuit breakers, and RAG evaluation over HTTP/SSE.",
+  "type": "module",
+  "main": "./src/index.mjs",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.mjs"
+    }
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "bench": "node benchmarks/run_eval.mjs"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "author": "Nahian Akhtar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nahianakhtar/fullstack-rag-eval-studio.git"
+  }
+}
