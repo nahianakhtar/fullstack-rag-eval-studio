@@ -1,0 +1,26 @@
+name: Node.js 22 Zero-Dep AI SDK & Eval Gateway CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-bench:
+    name: Node 22 ESM Tests & Golden Eval Benchmark
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run node:test unit & live HTTP/SSE suite
+        run: npm test
+
+      - name: Execute Golden RAG & Guardrail Benchmark
+        run: npm run bench
