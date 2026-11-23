@@ -24,3 +24,6 @@ jobs:
 
       - name: Execute Golden RAG & Guardrail Benchmark
         run: npm run bench
+
+      - name: Verify CLI Version & Help Banner
+        run: node bin/cli.mjs --version && node bin/cli.mjs --help
