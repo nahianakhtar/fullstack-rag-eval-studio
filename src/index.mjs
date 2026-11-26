@@ -1490,7 +1490,7 @@ export function formatDiffReport(diff, format = "table") {
   const fmtSigned = (n) => (n >= 0 ? `+${n.toFixed(4)}` : n.toFixed(4));
   if (format === "markdown") {
     const lines = [
-      `### Pairwise RAG A/B Regression Diff — **${diff.verdict}**`,
+      `### Pairwise RAG A/B Regression Diff (${diff.verdict})`,
       "",
       "| Metric | Baseline | Candidate | Delta |",
       "| :--- | ---: | ---: | ---: |",
