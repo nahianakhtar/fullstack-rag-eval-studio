@@ -5,7 +5,7 @@
 [![TypeScript](https://img.shields.io/badge/Types-Strict%20.d.ts-blue.svg)](src/index.d.ts)
 [![External Deps](https://img.shields.io/badge/Runtime%20Dependencies-0-brightgreen.svg)](package.json)
 
-Zero-dependency **TypeScript / Node.js 22 ESM AI SDK & Streaming Evaluation Gateway (`v1.2.0`)** uniting strict JSON-Schema tool-call validation, deterministic PII/secret scrubbing, cosine n-gram semantic LRU caching, per-client token-budget sliding-window rate limiting (`SlidingWindowTokenRateLimiter`), OpenTelemetry (`OTLP/JSON`) trace span & latency histogram export (`OtlpTraceExporter` + W3C `traceparent`), pairwise A/B prompt & chunking regression diffing (`RegressionDiffAnalyzer` + CLI), and RAG evaluation over REST + Server-Sent Events (`SSE`).
+Zero-dependency **TypeScript / Node.js 22 ESM AI SDK & Streaming Evaluation Gateway (`v1.2.0`)** uniting strict JSON-Schema tool-call validation, rule-based PII/secret scrubbing, cosine n-gram semantic LRU caching, per-client token-budget sliding-window rate limiting (`SlidingWindowTokenRateLimiter`), OpenTelemetry (`OTLP/JSON`) trace span & latency histogram export (`OtlpTraceExporter` + W3C `traceparent`), pairwise A/B prompt & chunking regression diffing (`RegressionDiffAnalyzer` + CLI), and RAG evaluation over REST + Server-Sent Events (`SSE`).
 
 ---
 
@@ -33,7 +33,7 @@ flowchart LR
 | **Context Precision (`AP@2`)** | **`0.9750` (`97.5%`)** | Rank-weighted precision across top-$K$ chunks |
 | **Recall@2** | **`1.0000` (`100.0%`)** | Relevant document coverage in top-$K$ retrieval |
 | **Semantic LRU Cache Hit Rate** | **`96.67%`** | Exact + `256`-dim L2 cosine n-gram similarity (`>= 0.82`) |
-| **End-to-End $p_{50}$ / $p_{95}$ Case Latency** | **`0.1246 ms` / `0.4468 ms`** | Validator + RateLimiter + Cache + Breaker + OTLP Span + Evaluator |
+| **Full-Pipeline $p_{50}$ / $p_{95}$ Case Latency** | **`0.1246 ms` / `0.4468 ms`** | Validator + RateLimiter + Cache + Breaker + OTLP Span + Evaluator |
 | **Evaluation Throughput** | **`5,456.0 cases/s`** | Zero external runtime dependencies (`Node v22.23.5`) |
 
 ---
